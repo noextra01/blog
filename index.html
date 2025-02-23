@@ -23,50 +23,25 @@
             <h1>노멀한 정보</h1>
             <p>세상 살면서 겪었던 미세한 정보 모음</p>
         </section>
-
-        <section class="featured-posts">
-            <h2>추천 포스트</h2>
-            <div class="post-grid">
-                <div class="post">
-                    <a href="20250222.html" class="read-more-link">
-                    <img src="main03.png" alt="스킨케어 트렌드">
-                    <h3>Google SEO 공략</h3>
-                    <p>최근 로제와 브루노 마스의 콜라보레이션 곡 'APT.'가 큰 인기를 끌며, K-POP과 해외 아티스트의 협업에 대한 관심이 높아지고 있습니다. 이러한 트렌드와 성공 요인, 그리고 앞으로의 전망에 대해 다루는 글을 작성해보세요.</p>
-                    <p class="read-more">더 읽기</p></a>
-                </div>
-
-                <div class="post">
-                    <img src="main03.png" alt="바디케어 텍스처">
-                    <h3>최신 인기 K-드라마 리뷰 및 추천</h3>
-                    <p>'눈물의 여왕'과 '내 남편과 결혼해 줘'와 같은 드라마가 국내외에서 큰 주목을 받고 있습니다. 이러한 작품들의 줄거리, 특징, 시청 포인트 등을 소개하는 포스트는 독자들의 관심을 끌 수 있습니다.</p>
-                    <a href="#" class="read-more">더 읽기</a>
-                </div>
-                <div class="post">
-                    <img src="main03.png" alt="향기 여정">
-                    <h3>인공지능(AI) 도구 활용법 및 추천</h3>
-                    <p>AI 기술이 발전함에 따라 다양한 AI 도구들이 주목받고 있습니다. 이러한 도구들의 특징, 활용 방법, 그리고 일상생활이나 업무에서의 적용 사례 등을 소개하는 글을 통해 독자들에게 유용한 정보를 제공할 수 있습니다.</p>
-                    <a href="#" class="read-more">더 읽기</a>
-                </div>
-            </div>
-        </section>
     </main>
-
+    <div id='recommend'></div>
     <div id='footer'></div>
     <script>
-        async function loadComponent(id, file) {
-            try {
-                const response = await fetch(file);
-                if (!response.ok) throw new Error("파일을 찾을 수 없음");
-                const text = await response.text();
-                document.getElementById(id).innerHTML = text;
-            } catch (error) {
-                console.error(error);
-            }
+    async function loadComponent(id, file) {
+        try {
+            const response = await fetch(window.location.origin + "/" + file);
+            if (!response.ok) throw new Error("파일을 찾을 수 없음");
+            const text = await response.text();
+            document.getElementById(id).innerHTML = text;
+        } catch (error) {
+            console.error(error);
         }
+    }
 
-        // 헤더와 푸터 로드
-        loadComponent("header", "header.html");
-        loadComponent("footer", "footer.html");
-    </script>
+    // 헤더 & 푸터 로드
+    loadComponent("header", "header.html");
+    loadComponent("footer", "footer.html");
+</script>
+
 </body>
 </html>
