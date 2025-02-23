@@ -14,9 +14,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap">
     <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 </head>
 <body>
-    <div id='header'></div>
+    <div id="header"></div>
 
     <main class="main">
         <section class="article">
@@ -24,24 +26,14 @@
             <p>세상 살면서 겪었던 미세한 정보 모음</p>
         </section>
     </main>
-    <div id='recommend'></div>
-    <div id='footer'></div>
-    <script>
-    async function loadComponent(id, file) {
-        try {
-            const response = await fetch(window.location.origin + "/" + file);
-            if (!response.ok) throw new Error("파일을 찾을 수 없음");
-            const text = await response.text();
-            document.getElementById(id).innerHTML = text;
-        } catch (error) {
-            console.error(error);
-        }
-    }
-
-    // 헤더 & 푸터 로드
-    loadComponent("header", "header.html");
-    loadComponent("footer", "footer.html");
+    <div id="recommend"></div>
+    <div id="footer"></div>
+<script>
+  $(function(){
+    $("#header").load("header.html");
+    $("#recommend").load("recommend.html");
+    $("#footer").load("footer.html");
+  });
 </script>
-
 </body>
 </html>
