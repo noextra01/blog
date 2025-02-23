@@ -10,11 +10,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: #e0ece4;
+    background: #ebebeb;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .logo {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.5em;
     color: #3b3b3b;
 }
@@ -36,17 +36,29 @@ body {
 .nav ul li a:hover {
     color: #6c5ce7;
 }
-.hero {
+.article {
     text-align: center;
     padding: 60px 20px;
     background: url('main03.png') center/cover no-repeat;
     color: #fff;
 }
-.hero h1 {
+.article h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
 }
-.hero p {
+.article p {
+    font-size: 1.2em;
+}
+.posting {
+    text-align: center;
+    padding: 60px 20px;
+
+}
+.posting h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+.posting p {
     font-size: 1.2em;
 }
 .featured-posts {
@@ -84,6 +96,10 @@ body {
 .post p {
     margin: 15px;
 }
+.read-more-link {
+  text-decoration: none;
+  color: #2e2e2e;
+}
 .read-more {
     display: inline-block;
     margin: 15px;
@@ -94,6 +110,8 @@ body {
 .read-more:hover {
     text-decoration: underline;
 }
+
+
 .footer {
     text-align: center;
     padding: 20px;
@@ -112,16 +130,25 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .header{
+      flex-direction: column;
+    }
     .nav ul {
-        flex-direction: column;
+
     }
     .nav ul li {
-        margin: 10px 0;
+        margin: 10px;
     }
-    .hero h1 {
+    .article h1 {
         font-size: 2em;
     }
-    .hero p {
+    .article p {
         font-size: 1em;
+    }
+    .posting{
+      padding:0;
+      width:80%;
+      margin: 0 auto;
+
     }
 }
