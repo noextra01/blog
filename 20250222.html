@@ -16,17 +16,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">W-A-S (past)</div>
-        <nav class="nav">
-            <ul>
-                <li><a href="index.html">홈</a></li>
-                <li><a href="#supernormal">일반정보</a></li>
-                <li><a href="#lifestyle">라이프스타일</a></li>
-                <li><a href="#about">소개</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header"></div>
 
     <main class="main">
         <section class="posting">
@@ -41,21 +31,11 @@
     </main>
     <div id="footer"></div>
     <script>
-        async function loadComponent(id, file) {
-            try {
-                const response = await fetch(file);
-                if (!response.ok) throw new Error("파일을 찾을 수 없음");
-                const text = await response.text();
-                document.getElementById(id).innerHTML = text;
-            } catch (error) {
-                console.error(error);
-            }
-        }
-
-        // 헤더와 푸터 로드
-        loadComponent("header", "header.html");
-        loadComponent("footer", "footer.html");
-        loadComponent("recommend", "recommend.html");
+      $(function(){
+        $("#header").load("header.html");
+        $("#recommend").load("recommend.html");
+        $("#footer").load("footer.html");
+      });
     </script>
 </body>
 </html>
