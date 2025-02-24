@@ -49,6 +49,10 @@ body {
 .article p {
     font-size: 1.2em;
 }
+.article table ul li a{
+  text-decoration: none;
+  color:#fff;
+}
 .posting {
     text-align: center;
     padding: 60px 20px;
