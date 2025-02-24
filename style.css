@@ -49,7 +49,11 @@ body {
 .article p {
     font-size: 1.2em;
 }
-.article table ul li a{
+.article ul li{
+  list-style-type: none;
+  line-height: 2;
+}
+.article ul li a{
   text-decoration: none;
   color:#fff;
 }
@@ -64,6 +68,7 @@ body {
 }
 .posting p {
     font-size: 1.2em;
+    text-align: left;
 }
 .featured-posts {
     padding: 40px 20px;
